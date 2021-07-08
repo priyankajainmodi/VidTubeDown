@@ -1,0 +1,34 @@
+<html>
+
+<head>
+<link rel="stylesheet" href="link.css">
+    <title>
+        youtubeDownload
+    </title>
+</head>
+
+<body bgcolor="black">
+<h1 class="search-panel__mobile__header" style="color:black; text-align:center; font-family:garamond;font-size:60px;padding:10px;background:white;border: 5px solid #A5CBAF">YouTube Video Downloader</h1>
+    <!-- <button onclick="location.href='{% url 'script' %}'">
+        trial
+    </button>
+    <hr> {% if data %} {{data | safe}} {% endif %}-->
+    <form  method="post" style="color:white;text-align:center;font-size:25px">
+        {% csrf_token %} Paste the link of the video to be downloaded<br><br>
+        <input type="text" name="param" required size="100" style="height:50px;font-weight:bold;border: 5px solid #A5CBAF;"><br> {{ data_external}}<br>{{data1}}
+        <br><br>
+        <input type="submit" value="download only audio(mp3)" formaction="/audio_mp3/" style="margin:20px;padding: 14px 28px;font-size:20px;background-color: #FDD3BB;font-family:cursive" >
+
+        
+        <input type="submit" value="download video in highest resolution" formaction="/high_res/" style="margin:20px;padding: 14px 28px;font-size:20px;background-color: #FDD3BB;font-family:cursive">
+
+        
+        <input type="submit" value="download video in lowest resolution" formaction="/low_res/" style="margin:20px;padding: 14px 28px;font-size:20px;background-color: #FDD3BB;font-family:cursive">
+
+
+    </form>
+</body>
+
+
+
+</html>
